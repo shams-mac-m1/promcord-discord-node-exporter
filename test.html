@@ -1,0 +1,28 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Django Card Generator</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'site.css' %}">
+</head>
+<body>
+  <h1>Django Card Generator</h1>
+  <p>The server can generate image card in a customized width and height. </p>
+  <p>To request a card image of a given width and height, simply include an image with the src path:
+    <b>/card/&lt;width&gt;x&lt;height&gt;/</b>
+    on this server such as:</p>
+  <pre>
+    &lt;img src="{{ example }}"&gt;
+  </pre>
+  <h2>Examples</h2>
+  <ul>
+    {% for img_url in showcase %}
+    <li><a href="{{ img_url }}"><img src="{{ img_url }}"></a></li>
+    {% endfor %}
+  </ul>
+
+  <p>This web service is built on <a href="{{ light_weight }}">the light weight implementation of Django framework by Hao Wu</a> </p>
+
+</body>
+</html>
